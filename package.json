@@ -1,0 +1,19 @@
+{
+  "name": "test-render-integration",
+  "version": "0.1.0",
+  "description": "Test render integration",
+  "main": "index.js",
+  "repository": "https://github.com/kuzanatoliy/test-render-integration.git",
+  "author": "Anatoli Kuzmiankou <njkznu@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
