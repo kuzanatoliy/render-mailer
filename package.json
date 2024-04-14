@@ -8,12 +8,18 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "prettier:check": "prettier --check .",
+    "prettier:write": "prettier --write ."
   },
   "engines": {
     "node": ">=20"
   },
   "dependencies": {
     "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@kuzanatoliorg/prettier-config": "^1.12.0",
+    "prettier": "^3.2.5"
   }
 }
