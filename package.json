@@ -6,14 +6,31 @@
   "repository": "https://github.com/kuzanatoliy/render-mailer.git",
   "author": "Anatoli Kuzmiankou <njkznu@gmail.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kuzanatoliy/render-mailer/issues"
+  },
+  "homepage": "https://github.com/kuzanatoliy/render-mailer#readme",
   "private": false,
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "commitlint": "commitlint --edit",
+    "prettier:check": "prettier --check .",
+    "prettier:write": "prettier --write ."
   },
   "engines": {
     "node": ">=20"
   },
   "dependencies": {
     "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.2.2",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@kuzanatoliorg/commitlint-config": "^1.2.0",
+    "@kuzanatoliorg/prettier-config": "^1.12.0",
+    "@types/node": "^20.12.7",
+    "husky": "^9.0.11",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5"
   }
 }
