@@ -15,7 +15,8 @@
     "build": "tsc",
     "start": "ts-node src",
     "start:dev": "ts-node-dev src",
-    "start:prod": "yarn run build && node build",
+    "start:build": "node build",
+    "start:prod": "yarn run build && yarn run start:build",
     "commitlint": "commitlint --edit",
     "prettier:check": "prettier --check .",
     "prettier:write": "prettier --write ."
