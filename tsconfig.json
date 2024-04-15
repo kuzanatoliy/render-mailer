@@ -1,8 +1,14 @@
 {
-  "extends": "ts-node/node16/tsconfig.json",
+  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
+    "lib": ["es2023"],
+    "module": "node16",
+    "target": "es2022",
     "outDir": "build",
-    "moduleResolution": "Node16"
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node16"
   },
   "include": ["src/**/*"],
   "exclude": ["**/*.spec.ts"]
