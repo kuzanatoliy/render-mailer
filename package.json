@@ -2,7 +2,7 @@
   "name": "@kuzanatoliorg/render-mailer",
   "version": "0.1.0",
   "description": "Render mailer",
-  "main": "index.js",
+  "main": "build/index.js",
   "repository": "https://github.com/kuzanatoliy/render-mailer.git",
   "author": "Anatoli Kuzmiankou <njkznu@gmail.com>",
   "license": "MIT",
@@ -12,7 +12,10 @@
   "homepage": "https://github.com/kuzanatoliy/render-mailer#readme",
   "private": false,
   "scripts": {
-    "start": "node index.js",
+    "build": "tsc",
+    "start": "ts-node src",
+    "start:dev": "ts-node-dev src",
+    "start:prod": "yarn run build && node build",
     "commitlint": "commitlint --edit",
     "prettier:check": "prettier --check .",
     "prettier:write": "prettier --write ."
@@ -31,6 +34,8 @@
     "@types/node": "^20.12.7",
     "husky": "^9.0.11",
     "prettier": "^3.2.5",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^5.4.5"
   }
 }
