@@ -7,7 +7,7 @@ import {
   MAILER_USER,
   MAILER_PASS,
   MAILER_TO,
-} from './constants';
+} from './config';
 
 const transporter = createTransport({
   host: MAILER_HOST,
