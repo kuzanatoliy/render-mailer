@@ -1,9 +1,9 @@
-const express = require('express');
+import express from 'express';
+import { messageRouter } from './routes';
+
 const app = express();
 const port = process.env.PORT || 3001;
 
-app.get('/', (req: any, res: any) => res.type('html').send('Hello world'));
+app.use(messageRouter);
 
-const server = app.listen(port, () =>
-  console.log(`Example app listening on port ${port}!`)
-);
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
