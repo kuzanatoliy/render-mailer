@@ -2,7 +2,7 @@
   "name": "@kuzanatoliorg/render-mailer",
   "version": "0.1.0",
   "description": "Render mailer",
-  "main": "build/index.js",
+  "main": "Service for sending emails that will be deployed on render platform",
   "repository": "https://github.com/kuzanatoliy/render-mailer.git",
   "author": "Anatoli Kuzmiankou <njkznu@gmail.com>",
   "license": "MIT",
