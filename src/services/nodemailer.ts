@@ -1,6 +1,7 @@
 import { createTransport } from 'nodemailer';
 
 import {
+  MAILER_SERVICE,
   MAILER_HOST,
   MAILER_PORT,
   MAILER_USER,
@@ -10,9 +11,9 @@ import {
 } from '../config';
 
 const transporter = createTransport({
+  service: MAILER_SERVICE,
   host: MAILER_HOST,
   port: MAILER_PORT,
-  secure: false,
   auth: {
     user: MAILER_USER,
     pass: MAILER_PASS,
