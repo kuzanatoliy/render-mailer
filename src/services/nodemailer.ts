@@ -9,6 +9,7 @@ import {
   MAILER_TO,
   MAILER_FROM,
 } from '../config';
+import { IMailProps } from '../types';
 
 const transporter = createTransport({
   service: MAILER_SERVICE,
@@ -20,10 +21,11 @@ const transporter = createTransport({
   },
 });
 
-export const sendMail = async () =>
+export const sendMail = async (props: IMailProps) =>
   transporter.sendMail({
     from: MAILER_FROM,
     to: MAILER_TO,
-    subject: 'Test email',
-    text: 'Hello world?',
+    cc: `${props.name} <${props.email}>`,
+    subject: props.subject,
+    text: props.message,
   });
