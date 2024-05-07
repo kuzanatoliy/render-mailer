@@ -12,7 +12,7 @@
   "homepage": "https://github.com/kuzanatoliy/render-mailer#readme",
   "private": false,
   "scripts": {
-    "build": "tsc --p ./tsconfig.json",
+    "build": "tsc",
     "start": "ts-node -r dotenv/config src",
     "start:dev": "ts-node-dev -r dotenv/config src",
     "start:build": "node -r dotenv/config build",
