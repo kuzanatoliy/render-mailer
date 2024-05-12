@@ -1,4 +1,4 @@
-import { createTransport } from 'nodemailer';
+import { Transporter, createTransport } from 'nodemailer';
 
 import {
   MAILER_SERVICE,
@@ -11,18 +11,26 @@ import {
 } from '../config';
 import { IMailProps } from '../types';
 
-const transporter = createTransport({
-  service: MAILER_SERVICE,
-  host: MAILER_HOST,
-  port: MAILER_PORT,
-  auth: {
-    user: MAILER_USER,
-    pass: MAILER_PASS,
-  },
-});
+let transporter: Transporter;
+
+const getTransport = () => {
+  if (!transporter) {
+    transporter = createTransport({
+      service: MAILER_SERVICE,
+      host: MAILER_HOST,
+      port: MAILER_PORT,
+      auth: {
+        user: MAILER_USER,
+        pass: MAILER_PASS,
+      },
+    });
+  }
+
+  return transporter;
+};
 
 export const sendMail = async (props: IMailProps) =>
-  transporter.sendMail({
+  getTransport().sendMail({
     from: MAILER_FROM,
     to: MAILER_TO,
     cc: `${props.name} <${props.email}>`,
