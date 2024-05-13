@@ -30,4 +30,8 @@ describe('nodemailerController', () => {
     expect(mockResponse.type).toHaveBeenCalled();
     expect(mockResponse.send).toHaveBeenCalled();
   });
+
+  it.todo('should call next function if props are correct');
+
+  it.todo('should not call next function if props are correct');
 });

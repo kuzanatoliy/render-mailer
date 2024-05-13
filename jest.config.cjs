@@ -3,5 +3,12 @@ module.exports = {
   clearMocks: true,
   collectCoverage: true,
   coverageDirectory: 'coverage',
-  coveragePathIgnorePatterns: ['/node_modules/', 'src/config'],
+  collectCoverageFrom: ['src/**/*.(js|ts|jsx|tsx)'],
+  coveragePathIgnorePatterns: [
+    '/node_modules/',
+    'src/config',
+    'src/types',
+    'src/mock-data',
+    'index.(js|ts|jsx|tsx)',
+  ],
 };

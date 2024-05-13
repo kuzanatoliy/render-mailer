@@ -1,5 +1,7 @@
-import { sendMail } from './nodemailer';
 import { createTransport } from 'nodemailer';
+
+import { sendMail } from './nodemailer';
+import mailData from '../mock-data/mail.json';
 
 jest.mock('nodemailer', () => ({
   createTransport: jest.fn(),
@@ -15,25 +17,18 @@ jest.mocked(createTransport).mockImplementation(
 );
 
 describe('nodemailerService', () => {
-  const mockEmailProps = {
-    subject: 'Test subject',
-    message: 'Test email message',
-    name: 'Test User',
-    email: 'test@test.com',
-  };
-
   afterEach(() => {
     jest.clearAllMocks();
   });
 
   it('should send email', () => {
-    sendMail(mockEmailProps);
-    sendMail(mockEmailProps);
+    sendMail(mailData.correct);
+    sendMail(mailData.correct);
     expect(sendMailSpy).toHaveBeenCalledWith(
       expect.objectContaining({
-        subject: mockEmailProps.subject,
-        text: mockEmailProps.message,
-        cc: `${mockEmailProps.name} <${mockEmailProps.email}>`,
+        subject: mailData.correct.subject,
+        text: mailData.correct.message,
+        cc: `${mailData.correct.name} <${mailData.correct.email}>`,
       })
     );
     expect(sendMailSpy).toHaveBeenCalledTimes(2);
