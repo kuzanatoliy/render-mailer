@@ -1,7 +1,8 @@
 import { Request, Response } from 'express';
 
-import { sendMail } from './nodemailer';
+import { sendMail, validateMail } from './nodemailer';
 import { nodemailerService } from '../services';
+import mailData from '../mock-data/mail.json';
 
 jest.mock('../services', () => ({
   nodemailerService: {
@@ -31,7 +32,27 @@ describe('nodemailerController', () => {
     expect(mockResponse.send).toHaveBeenCalled();
   });
 
-  it.todo('should call next function if props are correct');
+  it('should call next function if props are correct', async () => {
+    const requestData = {
+      ...mockRequest,
+      body: { ...mailData.correct },
+    } as unknown as Request;
+    const nextSpy = jest.fn();
+    await validateMail(requestData, mockResponse, nextSpy);
+    expect(nextSpy).toHaveBeenCalled();
+    expect(mockResponse.status).not.toHaveBeenCalled();
+    expect(mockResponse.send).not.toHaveBeenCalled();
+  });
 
-  it.todo('should not call next function if props are correct');
+  it('should not call next function if props are correct', async () => {
+    const requestData = {
+      ...mockRequest,
+      body: { ...mailData.incorrect },
+    } as unknown as Request;
+    const nextSpy = jest.fn();
+    await validateMail(requestData, mockResponse, nextSpy);
+    expect(nextSpy).not.toHaveBeenCalled();
+    expect(mockResponse.status).toHaveBeenCalled();
+    expect(mockResponse.send).toHaveBeenCalled();
+  });
 });
