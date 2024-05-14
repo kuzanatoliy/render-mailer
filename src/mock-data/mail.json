@@ -1,0 +1,14 @@
+{
+  "correct": {
+    "subject": "Test subject",
+    "message": "Test email message",
+    "name": "Test User",
+    "email": "test@test.com"
+  },
+  "incorrect": {
+    "subject": "",
+    "message": "",
+    "name": "",
+    "email": "test.com"
+  }
+}
