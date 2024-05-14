@@ -9,6 +9,7 @@ module.exports = {
     'src/config',
     'src/types',
     'src/mock-data',
+    'src/routes',
     'index.(js|ts|jsx|tsx)',
   ],
 };
