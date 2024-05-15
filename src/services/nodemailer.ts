@@ -1,4 +1,4 @@
-import { Transporter, createTransport } from 'nodemailer';
+import { createTransport } from 'nodemailer';
 
 import {
   MAILER_SERVICE,
@@ -9,9 +9,9 @@ import {
   MAILER_TO,
   MAILER_FROM,
 } from '../config';
-import { IMailProps } from '../types';
+import { IMailProps, TTransporter } from '../types';
 
-let transporter: Transporter;
+let transporter: TTransporter;
 
 const getTransport = () => {
   if (!transporter) {

@@ -1,8 +1,7 @@
-import { Request, Response } from 'express';
-
 import { sendMail, validateMail } from './nodemailer';
 import { nodemailerService } from '../services';
 import mailData from '../mock-data/mail.json';
+import { IRequest, IResponse } from '../types';
 
 jest.mock('../services', () => ({
   nodemailerService: {
@@ -20,9 +19,9 @@ const mockResponse = {
   type: jest.fn().mockImplementation(() => mockResponse),
   send: jest.fn().mockImplementation(() => mockResponse),
   status: jest.fn().mockImplementation(() => mockResponse),
-} as unknown as Response;
+} as unknown as IResponse;
 
-const mockRequest = {} as unknown as Request;
+const mockRequest = {} as unknown as IRequest;
 
 describe('nodemailerController', () => {
   it('should send email', async () => {
@@ -36,7 +35,7 @@ describe('nodemailerController', () => {
     const requestData = {
       ...mockRequest,
       body: { ...mailData.correct },
-    } as unknown as Request;
+    } as unknown as IRequest;
     const nextSpy = jest.fn();
     await validateMail(requestData, mockResponse, nextSpy);
     expect(nextSpy).toHaveBeenCalled();
@@ -48,7 +47,7 @@ describe('nodemailerController', () => {
     const requestData = {
       ...mockRequest,
       body: { ...mailData.incorrect },
-    } as unknown as Request;
+    } as unknown as IRequest;
     const nextSpy = jest.fn();
     await validateMail(requestData, mockResponse, nextSpy);
     expect(nextSpy).not.toHaveBeenCalled();
