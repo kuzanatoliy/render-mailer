@@ -1,11 +1,11 @@
-import { NextFunction, Request, Response } from 'express';
 import { checkSchema } from 'express-validator';
 import { nodemailerService } from '../services';
+import { IRequest, IResponse, INextFunction } from '../types';
 
 export const validateMail = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
+  req: IRequest,
+  res: IResponse,
+  next: INextFunction
 ) => {
   const result = await checkSchema(
     {
@@ -24,7 +24,7 @@ export const validateMail = async (
   return next();
 };
 
-export const sendMail = async (req: Request, res: Response) => {
+export const sendMail = async (req: IRequest, res: IResponse) => {
   const info = await nodemailerService.sendMail(req.body);
   res.type('html').send(info.messageId);
 };
