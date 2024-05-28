@@ -1,0 +1,80 @@
+{
+  "info": {
+    "_postman_id": "a962fe5b-76a0-4e97-922d-fe2867b276dc",
+    "name": "render-mailer-local",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "4702233"
+  },
+  "item": [
+    {
+      "name": "/message",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "subject",
+              "value": "Local Test",
+              "type": "text"
+            },
+            {
+              "key": "message",
+              "value": "Local test message",
+              "type": "text"
+            },
+            {
+              "key": "name",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "email",
+              "value": "njkz-09",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3001/message",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["message"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "cors",
+      "request": {
+        "method": "OPTIONS",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3001",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001"
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    }
+  ]
+}
