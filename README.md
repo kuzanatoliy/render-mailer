@@ -21,14 +21,14 @@ The repo contains code for middle email sending service and should be integrated
 
 | Variable | Description | Example |
 | --- | --- | --- |
-| MAILER_SERVICE | Set up service that used as provider | yandex |
-| MAILER_HOST | SMTP host name | example.mail.com |
-| MAILER_PORT | SMTP port | 587 |
-| MAILER_USER | User name | kuzanatoliorg |
-| MAILER_PASS | Password | kuzanatoliorg_password |
-| MAILER_TO | Target email address | kuzanatoliorg_example@mail.com |
-| MAILER_FROM | Email address that used as sender | kuzanatoliort_example@mailspons.com |
-| CORS_ORIGIN | CORS origin configuration | https://example.com |
+| MAILER_SERVICE | Set up service that used as provider | `yandex` |
+| MAILER_HOST | SMTP host name | `example.mail.com` |
+| MAILER_PORT | SMTP port | `587` |
+| MAILER_USER | User name | `kuzanatoliorg` |
+| MAILER_PASS | Password | `kuzanatoliorg_password` |
+| MAILER_TO | Target email address | `kuzanatoliorg_example@mail.com` |
+| MAILER_FROM | Email address that used as sender | `kuzanatoliort_example@mailspons.com` |
+| CORS_ORIGIN | CORS origin configuration | `https://example.com` |
 
 [Example](.env.example)
 
