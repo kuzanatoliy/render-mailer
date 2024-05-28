@@ -32,6 +32,10 @@ The repo contains code for middle email sending service and should be integrated
 
 [Example](.env.example)
 
+### API
+
+[Postman collection](render-mailer.postman_collection.json)
+
 ### Requirements
 
 NodeJS >= 20.x
