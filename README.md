@@ -30,6 +30,8 @@ The repo contains code for middle email sending service and should be integrated
 | MAILER_FROM | Email address that used as sender | kuzanatoliort_example@mailspons.com |
 | CORS_ORIGIN | CORS origin configuration | https://example.com |
 
+[Example](.env.example)
+
 ### Requirements
 
 NodeJS >= 20.x
