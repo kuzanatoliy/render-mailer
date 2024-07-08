@@ -34,4 +34,4 @@ The repo contains code for middle email sending service and should be integrated
 
 ### Requirements
 
-NodeJS >= 20.x
+NodeJS >= 20.x ([How to install](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs))
